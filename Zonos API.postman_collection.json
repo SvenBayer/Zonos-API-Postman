@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "0b62b823-0ed7-4607-af37-11b62fb87e9a",
+		"name": "Zonos API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1591736"
+	},
+	"item": [
+		{
+			"name": "Models",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/models",
+					"path": [
+						"models"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Languages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/languages",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"languages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Synthesize",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model_choice\": \"Zyphra/Zonos-v0.1-hybrid\",\r\n    \"text\": \"Hello, this is Kristin Schaal. The other night was this huge explosion, because I was trying pasta with antipasta.\",\r\n    \"language\": \"en-us\",\r\n    \"unconditional_keys\": [\"pitch_std\"],\r\n    \"emotion\": {\r\n        \"happiness\": 1,\r\n        \"sadness\": 0.15,\r\n        \"disgust\": 0.15,\r\n        \"fear\": 0.15,\r\n        \"surprise\": 0.5,\r\n        \"anger\": 0.3,\r\n        \"other\": 0.8,\r\n        \"neutral\": 0.4\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/synthesize",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"synthesize"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:7861",
+			"type": "string"
+		}
+	]
+}
